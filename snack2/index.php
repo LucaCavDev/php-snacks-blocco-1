@@ -21,10 +21,6 @@
         }
         .green {
           background-color: green;
-<<<<<<< HEAD
-          padding: 30px;
-=======
->>>>>>> master
         }
     </style>
     <?php
@@ -45,15 +41,11 @@ Se tutto è ok stampare "Accesso riuscito", altrimenti
 -->
   <?php
     $name = $_GET["name"];
-<<<<<<< HEAD
     $isNameLonger = strlen($name) > 3;
-=======
->>>>>>> master
 
     $mail = $_GET["mail"];
     $at = strpos($mail, '@');
     $dot = strpos($mail, '.');
-<<<<<<< HEAD
     $isMailValid = $at !== false && $dot !== false;
 
     $age = $_GET["age"];
@@ -61,28 +53,17 @@ Se tutto è ok stampare "Accesso riuscito", altrimenti
 
   ?>
   <h2 class="red">
-    example: http://localhost/php-snacks-blocco-1/snack2/?name=ciccio&mail=qwer@.er&age=34
-=======
-
-    $age = $_GET["age"];
-
-  ?>
-  <h2 class="red">
-    example: http://localhost/?name=ciccio&mail=ciccio@panettone.nutella&age=500
->>>>>>> master
+    example: http://localhost/php-snacks-blocco-1/snack2/?name=ciccio&mail=ciccio@panettone.nutella&age=500
   </h2>
 
 
   <h3 class="green">
     <?php
-<<<<<<< HEAD
-    echo $name; echo '<br><br>';
-    echo $mail; echo '<br><br>';
-    echo $age; echo '<br><br>';
+      echo $name; echo '<br><br>';
+      echo $mail; echo '<br><br>';
+      echo $age; echo '<br><br>';
+
       if ($isNameLonger && $isMailValid && $isAgeNumber) {
-=======
-      if ((strlen($name) > 3) && ($at !== false && $dot !== false) && (is_numeric($age)) && ($age >= 18 && $age < 120)) {
->>>>>>> master
         echo "Accesso riuscito";
       } else {
         echo "Accesso negato";
