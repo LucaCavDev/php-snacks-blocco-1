@@ -21,6 +21,7 @@
         }
         .green {
           background-color: green;
+          padding: 30px;
         }
     </style>
     <?php
@@ -41,12 +42,15 @@ Se tutto è ok stampare "Accesso riuscito", altrimenti
 -->
   <?php
     $name = $_GET["name"];
+    $isNameLonger = strlen($name) > 3;
 
     $mail = $_GET["mail"];
     $at = strpos($mail, '@');
     $dot = strpos($mail, '.');
+    $isMailValid = $at !== false && $dot !== false;
 
     $age = $_GET["age"];
+    $isAgeNumber = is_numeric($age);
 
   ?>
   <h2 class="red">
@@ -56,7 +60,10 @@ Se tutto è ok stampare "Accesso riuscito", altrimenti
 
   <h3 class="green">
     <?php
-      if ((strlen($name) > 3) && ($at !== false && $dot !== false) && (is_numeric($age))) {
+    echo $name; echo '<br><br>';
+    echo $mail; echo '<br><br>';
+    echo $age; echo '<br><br>';
+      if ($isNameLonger && $isMailValid && $isAgeNumber) {
         echo "Accesso riuscito";
       } else {
         echo "Accesso negato";
